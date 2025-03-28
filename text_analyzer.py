@@ -21,3 +21,25 @@ def sort_by_area(data):
 def sort_by_population(data):
     """Сортування за населенням країни"""
     return sorted(data, key=lambda x: x['population'])
+
+
+if __name__ == "__main__":
+    # Вкажіть шлях до вашого файлу з даними
+    file_path = input("Введіть шлях до файлу з даними: ")
+
+    # Читання даних з файлу
+    population_data = read_population_data(file_path)
+
+    # Сортування за площею
+    sorted_by_area = sort_by_area(population_data)
+    print("Сортування за площею:")
+    for country in sorted_by_area:
+        print(f"{country['country']}: {country['area']} км²")
+
+    print("\n")  # Розділяємо виведення
+
+    # Сортування за населенням
+    sorted_by_population = sort_by_population(population_data)
+    print("Сортування за населенням:")
+    for country in sorted_by_population:
+        print(f"{country['country']}: {country['population']} осіб")
