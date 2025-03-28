@@ -2,6 +2,7 @@ import pytest
 import os
 from text_analyzer import read_population_data, sort_by_area, sort_by_population
 
+
 # Фікстура для тестових даних
 @pytest.fixture
 def sample_data():
@@ -12,6 +13,8 @@ def sample_data():
         {"country": "Індія", "area": 3287263, "population": 1380004385},
         {"country": "Китай", "area": 9596961, "population": 1395380000}
     ]
+
+
 # Тестування функції сортування за площею
 @pytest.mark.parametrize("data, expected", [
     (
@@ -65,7 +68,6 @@ def test_read_population_data_valid():
     assert result[1]["area"] == 9984670  # Перевірка площі
 
     # Видалити тимчасовий файл після тесту
-    import os
     os.remove(test_file)
 
 
@@ -73,7 +75,6 @@ def test_read_population_data_valid():
 def test_read_population_data_file_not_found():
     with pytest.raises(FileNotFoundError):
         read_population_data("non_existent_file.txt")
-
 
 
 # Тестування неправильної структури даних у файлі
@@ -87,4 +88,3 @@ def test_read_population_data_invalid_format():
 
     # Видалити тимчасовий файл
     os.remove(test_file)
-
