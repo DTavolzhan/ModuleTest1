@@ -1,4 +1,5 @@
 import pytest
+import os
 from text_analyzer import read_population_data, sort_by_area, sort_by_population
 
 # Фікстура для тестових даних
@@ -66,3 +67,10 @@ def test_read_population_data_valid():
     # Видалити тимчасовий файл після тесту
     import os
     os.remove(test_file)
+
+
+# Тестування, коли файл не існує
+def test_read_population_data_file_not_found():
+    with pytest.raises(FileNotFoundError):
+        read_population_data("non_existent_file.txt")
+
