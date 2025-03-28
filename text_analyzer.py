@@ -13,3 +13,8 @@ def read_population_data(file_path):
                 "population": int(population)
             })
     return data
+
+def sort_by_area(data):
+    """Сортування за площею країни"""
+    return sorted(data, key=lambda x: x['area'])
+
