@@ -1,5 +1,5 @@
 import pytest
-from text_analyzer import  sort_by_area
+from text_analyzer import  sort_by_area, sort_by_population
 
 # Фікстура для тестових даних
 @pytest.fixture
@@ -28,3 +28,22 @@ def sample_data():
 ])
 def test_sort_by_area(data, expected):
     assert sort_by_area(data) == expected
+
+
+# Тестування функції сортування за населенням
+@pytest.mark.parametrize("data, expected", [
+    (
+        [
+            {"country": "A", "population": 1000},
+            {"country": "B", "population": 5000},
+            {"country": "C", "population": 3000}
+        ],
+        [
+            {"country": "A", "population": 1000},
+            {"country": "C", "population": 3000},
+            {"country": "B", "population": 5000}
+        ]
+    )
+])
+def test_sort_by_population(data, expected):
+    assert sort_by_population(data) == expected
