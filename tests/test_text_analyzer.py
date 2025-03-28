@@ -74,3 +74,17 @@ def test_read_population_data_file_not_found():
     with pytest.raises(FileNotFoundError):
         read_population_data("non_existent_file.txt")
 
+
+
+# Тестування неправильної структури даних у файлі
+def test_read_population_data_invalid_format():
+    test_file = "test_invalid_population_data.txt"
+    with open(test_file, "w", encoding="utf-16") as file:
+        file.write("Україна, 603628\n")
+
+    with pytest.raises(ValueError):
+        read_population_data(test_file)
+
+    # Видалити тимчасовий файл
+    os.remove(test_file)
+
