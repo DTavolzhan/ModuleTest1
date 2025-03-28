@@ -18,3 +18,6 @@ def sort_by_area(data):
     """Сортування за площею країни"""
     return sorted(data, key=lambda x: x['area'])
 
+def sort_by_population(data):
+    """Сортування за населенням країни"""
+    return sorted(data, key=lambda x: x['population'])
