@@ -28,9 +28,11 @@ def read_population_data(file_path):
 
     return data
 
+
 def sort_by_area(data):
     """Сортування за площею країни"""
     return sorted(data, key=lambda x: x['area'])
+
 
 def sort_by_population(data):
     """Сортування за населенням країни"""
@@ -38,7 +40,7 @@ def sort_by_population(data):
 
 
 if __name__ == "__main__":
-    # Запитуємо шлях до  файлу з даними
+    # Запитуємо шлях до файлу з даними
     file_path = input("Введіть шлях до файлу з даними: ")
 
     # Читаємо дані з файлу
