@@ -24,13 +24,13 @@ def sort_by_population(data):
 
 
 if __name__ == "__main__":
-    # Вкажіть шлях до вашого файлу з даними
+    # Запитуємо шлях до  файлу з даними
     file_path = input("Введіть шлях до файлу з даними: ")
 
-    # Читання даних з файлу
+    # Читаємо дані з файлу
     population_data = read_population_data(file_path)
 
-    # Сортування за площею
+    # Сортуємо за площею
     sorted_by_area = sort_by_area(population_data)
     print("Сортування за площею:")
     for country in sorted_by_area:
@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
     print("\n")  # Розділяємо виведення
 
-    # Сортування за населенням
+    # Сортуємо за населенням
     sorted_by_population = sort_by_population(population_data)
     print("Сортування за населенням:")
     for country in sorted_by_population:
